@@ -26,6 +26,28 @@ def word_filter_counter(text, filter_words):
     # Implement the logic to filter words and count their occurrences
     pass  # Delete this after implementing some code inside this function
 
+import re
+
+def word_filter_counter(text, filter_words):
+    # Normalize text to lower case
+    text = text.lower()
+    
+    # Remove punctuation and split into words
+    words = re.findall(r'\b\w+\b', text)
+
+    # Filter words list to lower case for case-insensitive comparison
+    filter_words = [word.lower() for word in filter_words]
+
+    # Initialize a dictionary to hold word counts
+    word_count = {}
+
+    # Count occurrences of each filtered word
+    for word in words:
+        if word in filter_words:
+            word_count[word] = word_count.get(word, 0) + 1
+
+    return word_count
+
 
 # Test cases
 print(
