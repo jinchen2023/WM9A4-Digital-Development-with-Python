@@ -29,6 +29,18 @@ def speeding_ticket(speed, is_birthday):
     # Implement the logic based on the driver's speed and birthday condition
     pass  # Delete this after implementing some code inside this function
 
+def speeding_ticket(speed, is_birthday):
+    # Adjust speed limits if it's the driver's birthday
+    adjustment = 5 if is_birthday else 0
+
+    # Compare speed with adjusted thresholds
+    if speed <= 60 + adjustment:
+        return "No Ticket"
+    elif speed <= 80 + adjustment:
+        return "Small Ticket"
+    else:
+        return "Big Ticket"
+
 
 # Test cases
 speeding_ticket(60, False)  # Expected output: "No Ticket"
