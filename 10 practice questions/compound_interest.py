@@ -27,6 +27,15 @@ def compound_interest_calculator(P, r, n, t):
     # Implement the compound interest calculation
     pass  # Delete this after implementing some code inside this function
 
+def compound_interest_calculator(P, r, n, t):
+    # Check for edge cases
+    if P < 0 or r < 0 or n <= 0 or t < 0:
+        return "Invalid input. Ensure all numbers are positive and n > 0."
+
+    # Compound interest formula
+    A = P * (1 + r / n) ** (n * t)
+
+    return A
 
 # Test cases
 print(compound_interest_calculator(1000, 0.05, 12, 5))  # Expected: Amount after 5 years
