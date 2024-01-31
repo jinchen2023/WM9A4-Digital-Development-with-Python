@@ -25,6 +25,21 @@ def calculate_factorial(number):
     # Implement the factorial calculation using a for loop
     pass  # Delete this after implementing some code inside this function
 
+def calculate_factorial(number):
+    # Handle edge case for negative input
+    if number < 0:
+        return "Factorial is not defined for negative numbers."
+
+    # Handle the special case of 0! which is 1
+    if number == 0:
+        return 1
+
+    # Calculate the factorial
+    factorial = 1
+    for i in range(1, number + 1):
+        factorial *= i
+
+    return factorial
 
 # Test cases
 print(calculate_factorial(5))  # Expected output: 120
