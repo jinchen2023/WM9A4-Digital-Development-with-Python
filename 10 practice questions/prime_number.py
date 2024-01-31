@@ -27,6 +27,18 @@ def is_prime(number):
     # Return True if the number is prime, False otherwise
     pass  # Delete this after implementing some code inside this function
 
+def is_prime(number):
+    # Check for numbers less than 2 (not prime)
+    if number < 2:
+        return False
+
+    # Check for factors from 2 up to the square root of the number
+    for i in range(2, int(number**0.5) + 1):
+        if number % i == 0:
+            return False
+
+    return True
+
 
 # Test cases
 print(is_prime(11))  # Expected output: True
