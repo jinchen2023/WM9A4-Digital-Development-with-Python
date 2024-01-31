@@ -25,6 +25,20 @@ def is_leap_year(year):
     # Implement the leap year check logic
     pass  # Delete this after implementing some code inside this function
 
+def is_leap_year(year):
+    # Check if year is divisible by 4
+    if year % 4 == 0:
+        # Check if it's an end-of-century year
+        if year % 100 == 0:
+            # If so, it must also be divisible by 400 to be a leap year
+            return year % 400 == 0
+        else:
+            # Not an end-of-century year, so it's a leap year
+            return True
+    else:
+        # Not divisible by 4, so it's not a leap year
+        return False
+
 
 # Test cases
 print(is_leap_year(2020))  # Expected output: True
