@@ -25,6 +25,24 @@ def fibonacci_sequence(max_value):
     # Implement the Fibonacci sequence calculation using a while loop
     pass  # Delete this after implementing some code inside this function
 
+def fibonacci_sequence(max_value):
+    # Handle edge case for negative input
+    if max_value < 0:
+        return "Fibonacci sequence is not defined for negative numbers."
+
+    # Handle edge case for 0
+    if max_value == 0:
+        return [0]
+
+    # Start the Fibonacci sequence with 0 and 1
+    sequence = [0, 1]
+
+    # Generate the sequence using a while loop
+    while sequence[-1] + sequence[-2] <= max_value:
+        sequence.append(sequence[-1] + sequence[-2])
+
+    return sequence
+
 
 # Test cases
 print(fibonacci_sequence(10))  # Expected output: [0, 1, 1, 2, 3, 5, 8]
