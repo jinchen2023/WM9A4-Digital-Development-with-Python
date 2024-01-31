@@ -26,7 +26,28 @@ def date_passed(todays_date, scheduled_date):
     # Implement the logic to compare the dates and print the appropriate message
     pass  # Delete this after implementing some code inside this function
 
+from datetime import datetime
 
+def date_passed(todays_date, scheduled_date):
+    # Function to parse the date string
+    def parse_date(date_str):
+        # Adding an arbitrary year for comparison
+        date_str += " 2020"
+        # Parse the date
+        return datetime.strptime(date_str, "%dth %B %Y")
+
+    # Parse both dates
+    todays_date_parsed = parse_date(todays_date)
+    scheduled_date_parsed = parse_date(scheduled_date)
+
+    # Compare and print the appropriate message
+    if todays_date_parsed > scheduled_date_parsed:
+        print("Scheduled date has passed")
+    elif todays_date_parsed < scheduled_date_parsed:
+        print("Scheduled date is yet to pass")
+    else:
+        print("Scheduled date is today")
+        
 # Test cases
 date_passed("26th March", "25th March")  # Expected: Scheduled date has passed
 date_passed("26th March", "26th March")  # Expected: Scheduled date is today
